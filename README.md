@@ -1,4 +1,4 @@
-elgg-allfriends
+allfriends
 ===============
 
 Add new users automatically as everyones friends.
