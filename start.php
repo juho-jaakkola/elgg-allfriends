@@ -1,16 +1,16 @@
 <?php
 /**
  * AllFriends
- * 
+ *
  * @package AllFriends
  */
 
 function allfriends_init () {
 	// Register handler for adding friends
 	elgg_register_plugin_hook_handler('register', 'user', 'allfriends_friendall');
-	
+
 	// Prevent users from getting flooded with "new friend" notifications
-	elgg_unregister_event_handler('create', 'friend', 'relationship_notification_hook');
+	elgg_enregister_event_handler('create', 'friend', '_elgg_send_friend_notification');
 }
 
 /**
