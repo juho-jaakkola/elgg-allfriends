@@ -6,6 +6,6 @@
     },
     "license": "GPL-2.0",
     "extra": {
-        "installer-name": "notifier"
+        "installer-name": "allfriends"
     }
 }
