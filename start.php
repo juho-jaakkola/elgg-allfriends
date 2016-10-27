@@ -10,7 +10,7 @@ function allfriends_init () {
 	elgg_register_event_handler('create', 'user', 'allfriends_friendall');
 
 	// Prevent users from getting flooded with "new friend" notifications
-	elgg_unregister_event_handler('create', 'friend', '_elgg_send_friend_notification');
+	elgg_unregister_event_handler('create', 'relationship', '_elgg_send_friend_notification');
 }
 
 /**
