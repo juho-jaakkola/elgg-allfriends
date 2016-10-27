@@ -7,7 +7,7 @@
 
 function allfriends_init () {
 	// Register handler for adding friends
-	elgg_register_plugin_hook_handler('register', 'user', 'allfriends_friendall');
+	elgg_register_event_handler('create', 'user', 'allfriends_friendall');
 
 	// Prevent users from getting flooded with "new friend" notifications
 	elgg_unregister_event_handler('create', 'friend', '_elgg_send_friend_notification');
@@ -16,9 +16,7 @@ function allfriends_init () {
 /**
  * Add user as friend of all other users at registration
  */
-function allfriends_friendall ($hook, $type, $value, $params) {
-	$new_user = $params['user'];
-
+function allfriends_friendall ($event, $type, $new_user) {
 	// Get all existing users
 	$users = new ElggBatch('elgg_get_entities', array(
 		'type' => 'user',
